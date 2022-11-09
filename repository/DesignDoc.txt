@@ -1,0 +1,8 @@
+The Consumer program will contain a class called Consumer, which contains two main functions--createWidget and createTableWidget.
+The Consumer will take two mandatory command line arguments and one optional argument. The first argument is the bucket requests
+will come from. The second command line argument is the bucket or table name that widgets will be created in. The optional
+argument is either "db" or "s3", which tells the consumer if it should write items to a dynamodb table or to an s3 bucket.
+The initialize function will parse these command lines and then begin the process of checking for new widget requests. These 
+requests will be sent to createWidget if we are writing to a bucket, and createTableWidget if we are writing to a dynamodb
+table. These functions will parse the json to fit the parameters of the widget we are writing, and then call a put object function
+to write the object appropriately to the resource specified.
